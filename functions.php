@@ -176,3 +176,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Register CPTS and Taxonomies
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
