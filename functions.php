@@ -194,6 +194,14 @@ function school_post_filter( $use_block_editor, $post ) {
 add_filter( 'use_block_editor_for_post', 'school_post_filter', 10, 2 );
 
 /**
+ * Remove the default editor from "school-staff" post type
+ */ 
+function remove_editor_for_school_staff() {
+    remove_post_type_support( 'school-staff', 'editor' );
+}
+add_action( 'init', 'remove_editor_for_school_staff' );
+
+/**
  * Change placeholder title
  */ 
 function wpb_change_title_text( $title ){
