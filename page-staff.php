@@ -56,7 +56,7 @@ get_header();
 			
 							if ( function_exists( 'get_field' ) ) {
 								if ( get_field( 'staff_biography' ) ) {
-									the_field( 'service_overview' );
+									the_field( 'staff_biography' );
 								}
 
 								if ( get_field( 'list_of_courses' ) ) {
