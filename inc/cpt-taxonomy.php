@@ -152,7 +152,6 @@ function school_register_taxonomies() {
         'rewrite'           => array( 'slug' => 'student-categories' ),
     );
     register_taxonomy( 'school-student-category', array( 'school-student' ), $args );
-
 }
 add_action( 'init', 'school_register_taxonomies' );
 

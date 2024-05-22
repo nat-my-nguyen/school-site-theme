@@ -180,3 +180,33 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Register CPTS and Taxonomies
  */
 require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+/**
+ * Remove Block Editor from "school-staff" post type
+ */ 
+function school_post_filter( $use_block_editor, $post ) {
+    if ( $post->post_type === 'school-staff' ) {
+        return false;
+    } else {
+        return $use_block_editor;
+    }
+}
+add_filter( 'use_block_editor_for_post', 'school_post_filter', 10, 2 );
+
+/**
+ * Change placeholder title
+ */ 
+function wpb_change_title_text( $title ){
+	$screen = get_current_screen();
+  
+	if  ( 'school-staff' == $screen->post_type ) {
+		 $title = 'Enter Staff Name';
+	}
+	
+	if  ( 'school-student' == $screen->post_type ) {
+		 $title = 'Enter Student Name';
+	}
+
+	return $title;
+}
+add_filter( 'enter_title_here', 'wpb_change_title_text' );
