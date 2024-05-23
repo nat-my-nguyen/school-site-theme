@@ -30,7 +30,6 @@ get_header();
 					'taxonomy'	=> $taxonomy,
 				)
 			);
-
 			if ( $terms && ! is_wp_error( $terms ) ) {
 				foreach ( $terms as $term ) {
 					$args = array(
@@ -44,31 +43,38 @@ get_header();
 							),
 						),
 					);
-
 					$query = new WP_Query( $args );
+					if ( $query -> have_posts() ){ ?>
 
-					if ( $query -> have_posts() ){
-						//Output term name
-						echo '<h2>' . esc_html( $term->name ) . '</h2>';
-						//Output content
+						<section class="staff-container">
+						<h2><?php echo esc_html( $term->name ); ?></h2>
+
+						<?php 
 						while ( $query -> have_posts() ) {
-							$query -> the_post();
-			
+							$query -> the_post(); ?>
+
+							<article class="staff-item">
+								<h3><?php echo esc_html( get_the_title() ); ?></h3>
+
+							<?php
 							if ( function_exists( 'get_field' ) ) {
 								if ( get_field( 'staff_biography' ) ) {
-									the_field( 'staff_biography' );
+									echo wp_kses_post( get_field( 'staff_biography' ) );
 								}
-
-								if ( get_field( 'list_of_courses' ) ) {
-									
-									the_field( 'list_of_courses' );
+								if ( get_field( 'list_of_courses' ) ) { ?>
+									<p>Courses: <?php echo esc_html( get_field( 'list_of_courses' ) ) ?></p>
+								<?php 
 								}
-								
-								if ( get_field( 'instructors_website' ) ) {
-									the_field( 'instructors_website' );
+								if ( get_field( 'instructors_website' ) ) { ?>
+									<a href="<?php echo esc_url( get_field( 'instructors_website' ) ); ?>">Instructor Website</a>
+								<?php
 								}
-							}
-						}
+							}?>
+							</article>
+						<?php 
+						} ?>
+						</section>
+						<?php
 						wp_reset_postdata();
 					}
 				}
