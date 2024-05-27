@@ -91,6 +91,10 @@ function school_register_custom_post_types() {
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-groups',
         'supports'           => array( 'title', 'thumbnail', 'editor' ),
+        'template'           => array( array( 'core/paragraph' ),array( 'core/button', array(
+            'align' => 'left',
+        )  ) ), 
+        'template_lock'      => 'all'
     );
     register_post_type( 'school-student', $args );
 }
