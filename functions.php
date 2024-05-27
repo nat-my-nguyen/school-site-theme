@@ -148,6 +148,28 @@ function school_site_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	//AOS feature by https://github.com/michalsnik/aos
+	//Enqueue style and script for AOS, checks if it's the Blog page and if there are posts
+	if ( is_home() && have_posts() ) {
+		//Loop through posts to check post type
+		while ( have_posts() ) {
+			the_post();
+			if ( get_post_type() == 'post' ) {
+				//AOS CSS
+				wp_enqueue_style('AOS_animate', 'https://unpkg.com/aos@next/dist/aos.css', false, null);
+
+				//AOS JS
+				wp_enqueue_script('AOS', 'https://unpkg.com/aos@next/dist/aos.js', array(), null, true);
+
+				//Initialize AOS
+				wp_add_inline_script('AOS', 'AOS.init();');
+				break; //Break the loop if at least one post is of type 'post'
+			}
+		}
+		//Reset post data after the loop
+		wp_reset_postdata();
+	}
 }
 add_action( 'wp_enqueue_scripts', 'school_site_scripts' );
 
