@@ -10,31 +10,35 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+    <?php
+    while ( have_posts() ) :
+        the_post();
+        ?>
 
-			get_template_part( 'template-parts/content', get_post_type() );
+        <article>
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'school-site' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'school-site' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+            <!-- Link to the single post -->
+            <a href="<?php the_permalink(); ?>">
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+                <!-- Post title -->
+                <h2><?php the_title(); ?></h2>
 
-		endwhile; // End of the loop.
-		?>
+                <!-- Post thumbnail (featured image) -->
+                <?php the_post_thumbnail('thumbnail', array('class'=>'alignright')); ?>
 
-	</main><!-- #main -->
+            </a>
+
+            <!-- Post excerpt -->
+            <?php the_content(); ?>
+
+        </article>
+
+    <?php endwhile; // End of the loop. ?>
+
+</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
+?>
