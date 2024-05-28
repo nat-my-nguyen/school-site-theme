@@ -34,9 +34,9 @@ get_header();
             <?php the_content(); ?>
 
         </article>
-
+		<?php get_template_part('template-parts/meet-others'); ?>
     <?php endwhile; // End of the loop. ?>
-
+	
 </main><!-- #main -->
 
 <?php
