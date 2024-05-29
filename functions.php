@@ -235,3 +235,4 @@ add_filter( 'enter_title_here', 'wpb_change_title_text' );
 
 //remove prefix for entire School-site
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
