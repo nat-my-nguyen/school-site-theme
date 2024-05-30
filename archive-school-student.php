@@ -18,12 +18,22 @@ get_header();
 				<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
+				function custom_excerpt_length( $length ) {
+					return 25; // Change this number to the desired length
+				}
+				add_filter( 'excerpt_length', 'custom_excerpt_length' );
+				function fwd_excerpt_more($more){
+					$more = '... <a href="'.esc_url(get_permalink()).'">'.__(' Read more about the student...').'</a>';
+					return $more;
+				}
+				add_filter('excerpt_more','fwd_excerpt_more',10);
 				?>
 			</header><!-- .page-header -->
 			<?php
 				//to render designers category
 				$args = array(
 					'post_type' => 'school-student',
+					'order'   => 'ASC',
 					'posts_per_page' => -1,
 					'tax_query' => array(
 						array(
@@ -43,9 +53,15 @@ get_header();
 						<article>
 							<a href="<?php the_permalink(); ?>">
 								<h2><?php the_title();?></h2>
-								<?php the_post_thumbnail('large'); ?>
+								<?php the_post_thumbnail('medium'); ?>
 							</a>
 							<?php the_excerpt(); ?>
+							<?php
+								// Displaying taxonomy terms as a list with links
+								echo '<div class="taxonomy-terms"><p>Specialty: ';
+								the_terms(get_the_ID(), 'school-student-category', '<span>', ', ', '</span>');
+								echo '</p></div>';
+							?>
 						</article>
 						<?php
 					}
@@ -55,6 +71,7 @@ get_header();
 				//to render developers category
 				$args = array(
 					'post_type' => 'school-student',
+					'order'   => 'ASC',
 					'posts_per_page' => -1,
 					'tax_query' => array(
 						array(
@@ -74,9 +91,15 @@ get_header();
 						<article>
 							<a href="<?php the_permalink(); ?>">
 								<h2><?php the_title();?></h2>
-								<?php the_post_thumbnail('large'); ?>
+								<?php the_post_thumbnail('medium'); ?>
 							</a>
 							<?php the_excerpt(); ?>
+							<?php
+								// Displaying taxonomy terms as a list with links
+								echo '<div class="taxonomy-terms"><p>Specialty: ';
+								the_terms(get_the_ID(), 'school-student-category', '<span>', ', ', '</span>');
+								echo '</p></div>';
+							?>
 						</article>
 						<?php
 					}

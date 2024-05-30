@@ -46,6 +46,9 @@ function school_site_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+	//Custom feature image size
+	add_image_size( 'custom-size', 200, 300, true ); // true for cropping, false for scaling
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
@@ -53,6 +56,7 @@ function school_site_setup() {
 			'footer-right' => esc_html__( 'Footer - Right Side', 'school-site' ),
 		)
 	);
+	
 
 	/*
 		* Switch default core markup for search form, comment form, and comments
@@ -229,3 +233,7 @@ function wpb_change_title_text( $title ){
 	return $title;
 }
 add_filter( 'enter_title_here', 'wpb_change_title_text' );
+
+//remove prefix for entire School-site
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
