@@ -140,6 +140,12 @@ add_action( 'widgets_init', 'school_site_widgets_init' );
  * Enqueue scripts and styles.
  */
 function school_site_scripts() {
+	wp_enqueue_style(
+		'school-googlefonts', //unique handle
+		'https://fonts.googleapis.com/css2?family=Belgrano&family=Inter:wght@100..900&display=swap',
+		array(),
+		null
+	);
 	wp_enqueue_style( 'school-site-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'school-site-style', 'rtl', 'replace' );
 
