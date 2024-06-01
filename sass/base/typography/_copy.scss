@@ -1,6 +1,11 @@
-p {
-	margin-bottom: 1.5em;
+p:not(p a) {
+	margin: 0 1.5em 1.5em;
 }
+
+p:has(> a:only-child) {
+	margin: 0;
+}
+  
 
 dfn,
 cite,

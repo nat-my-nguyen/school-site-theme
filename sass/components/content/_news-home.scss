@@ -1,0 +1,40 @@
+.recent-news {
+    padding: 1rem 2rem 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+
+    h2,
+    h3 {
+        width: 100%;
+    }
+
+    article, 
+    a:last-of-type:not(article a) {
+        margin: 1rem;
+        text-align: center;
+
+        h3 {
+            margin: 0;
+            background-color: $color__background-nav;
+        }
+
+        img {
+            border: 2px solid $color__background-nav;
+        }
+
+        a {
+            @include link-colors-dark();
+        }
+    }
+
+    a:last-of-type:not(article a) {
+        font-weight: 600;
+        text-transform: uppercase;
+        display: block;
+        width: 18.75rem;
+    }
+
+}

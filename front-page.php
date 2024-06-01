@@ -46,7 +46,12 @@ get_header();
 						<?php
 					}
 					wp_reset_postdata();
-				} ?> 
+				} ?>
+				<p>
+					<a href="<?php echo esc_url( get_permalink( get_option('page_for_posts') ) ); ?>">
+						Read more News
+					</a>
+				</p>
 			</section>
 		<?php
 		endwhile; // End of the loop.
