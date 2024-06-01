@@ -34,7 +34,6 @@
 				<h1 class="site-title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<?php the_custom_logo(); ?>
-						<span class="site-name"><?php bloginfo( 'name' ); ?></span>
 					</a>
 				</h1>
 				<?php
@@ -43,7 +42,6 @@
 				<p class="site-title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<?php the_custom_logo(); ?>
-						<span class="site-name"><?php bloginfo( 'name' ); ?></span>
 					</a>
 				</p>
 				<?php
