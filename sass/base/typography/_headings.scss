@@ -1,3 +1,4 @@
+// @import "abstracts/variables/breakpoints";
 h1,
 h2,
 h3,
@@ -9,39 +10,13 @@ h6 {
 }
 
 h1 {
-	font-size: 1.625rem;
-
-	@media (min-width: $mq_breakpoint_medium) {
-		font-size: 2.125rem;
-	}
-
-	@media (min-width: $mq_breakpoint_large) {
-		font-size: 2.25rem;
-	}
+	@include responsive-heading(1.625rem, 2.125rem, 2.25rem);
 }
 
 h2 {
-	font-size: 1.375rem;
-
-	@media (min-width: $mq_breakpoint_medium) {
-		font-size: 1.75rem;
-	}
-
-	@media (min-width: $mq_breakpoint_large) {
-		font-size: 1.875rem;
-	}
+	@include responsive-heading(1.375rem, 1.75rem, 1.875rem);
 }
 
 h3 {
-	font-size: 1.125rem;
-
-	@media (min-width: $mq_breakpoint_medium) {
-		font-size: 1.375rem;
-	}
-
-	@media (min-width: $mq_breakpoint_large) {
-		font-size: 1.5rem;
-	}
+	@include responsive-heading(1.125rem, 1.375rem, 1.5rem);
 }
-
-@import "abstracts/variables/breakpoints";

@@ -4,14 +4,21 @@ $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
+$color__background-nav: #262626;
 
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: #4169e1; //royalblue
-$color__link-visited: #800080; //purple
-$color__link-hover: #191970; //midnightblue
+$color__link: #1e532a; //dark green
+$color__link-visited: #4b2c5a; //deep purple
+$color__link-hover: #7a2727; //crimson
 $color__text-main: #404040;
+
+//Alternate colors for dark backgrounds
+$color__link-dark-bg: #b9da93; //lightgreen
+$color__link-visited-dark-bg: #ab4ac3; //bright purple
+$color__link-hover-dark-bg: #e59780; //soft orange
+$color__text-main-dark-bg: #dadada;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
