@@ -26,7 +26,7 @@
 	margin-bottom: 1.5em;
 }
 
-/* From fwd-starter-theme as per LH hint
+/* From fwd-starter-theme as per LH hint, adjusted to our style.
 This code will NOT work properly if there is a sidebar on the left or right */
 .alignwide,
 .alignfull {
@@ -40,10 +40,9 @@ This code will NOT work properly if there is a sidebar on the left or right */
 	width: auto;
 }
 
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: $mq_breakpoint_large) {
 	.alignwide {
-		max-width: 1300px;
-		margin-left: -150px;
-		margin-right: -150px;
+		max-width: $mq_breakpoint_xl;
+		margin: auto;
 	}
 }

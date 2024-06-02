@@ -6,6 +6,8 @@
     background-color: $color__background-nav;
 
     .site-branding {
+        margin: 0;
+        
         a {
             border: 2px solid #000;
             border-radius: 1rem;
@@ -17,6 +19,7 @@
 
     h3,
     p {
+        padding-top: 0;
         @include text-color-dark();
     }
 
