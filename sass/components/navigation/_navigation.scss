@@ -20,6 +20,8 @@
 			top: 100%;
 			left: -999em;
 			z-index: 99999;
+			background-color: #000;
+			color: #fff;
 
 			ul {
 				left: -999em;
@@ -37,6 +39,7 @@
 
 			a {
 				width: 200px;
+				color: #b9da93;
 			}
 
 			:hover > a,

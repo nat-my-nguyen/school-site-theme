@@ -26,7 +26,7 @@ get_header();
                 <h2><?php the_title(); ?></h2>
 
                 <!-- Post thumbnail (featured image) -->
-                <?php the_post_thumbnail('custom-size', array('class'=>'alignright')); ?>
+                <?php the_post_thumbnail('custom-size', array('class'=>'alignleft')); ?>
 
             </a>
 
