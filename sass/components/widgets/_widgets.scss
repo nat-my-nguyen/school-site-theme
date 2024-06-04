@@ -1,8 +1,46 @@
-.widget {
-	margin: 0 0 1.5em;
+.widget-area {
+	@media screen and (min-width: $mq_breakpoint_large) {
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: baseline;
+	}
+}
 
+.widget {
+	margin: 0 0 1em;
+	padding: 1rem 2rem;
+	width: 100%;
 	// Make sure select elements fit in widgets.
 	select {
 		max-width: 100%;
 	}
+
+	@media screen and (min-width: $mq_breakpoint_medium) {
+		padding: 1rem;
+	}
+}
+
+.wp-block-search {
+	// margin: 1rem;
+
+	.wp-block-search__inside-wrapper {
+		margin: 1rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	
+	.wp-block-search__input {
+		margin-bottom: .625rem;
+		width: 100%;
+	}
+	
+	.wp-block-search__button {
+		margin: 0; //overwrite a default value
+		width: 100%;
+	}
+}
+
+.wp-block-group {
+	padding: 0 1.5rem;
 }

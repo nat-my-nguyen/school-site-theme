@@ -22,8 +22,8 @@ get_header();
 
 			if ( is_home() && ! is_front_page() ) :
 				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				<header class="page-header">
+					<h1 class="page-title"><?php single_post_title(); ?></h1>
 				</header>
 				<?php
 			endif;
@@ -37,7 +37,7 @@ get_header();
 								 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 								 */
 				?>
-				<div data-aos="fade-up">
+				<div data-aos="zoom-in-down">
 					<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
 				</div>
 				<?php
