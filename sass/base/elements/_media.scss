@@ -13,3 +13,15 @@ img {
 figure {
 	margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
 }
+
+/*STUDENTS IMAGES*/
+.design-section img, .dev-section img{
+	border-radius: 50%;
+	border: 1rem double #646161;
+}
+
+.single-school-student img.wp-post-image{
+	border-radius: 1.5rem;
+	margin: 1rem 2rem 0 2rem;
+	border: 2px solid #646161;
+}
