@@ -46,9 +46,9 @@ get_header();
 					$query = new WP_Query( $args );
 					if ( $query -> have_posts() ){ ?>
 
-						<section class="staff-container">
+					<section class="staff-container">
 						<h2><?php echo esc_html( $term->name ); ?></h2>
-
+						<div class="staff-item-container">
 						<?php 
 						while ( $query -> have_posts() ) {
 							$query -> the_post(); ?>
@@ -62,20 +62,21 @@ get_header();
 									echo wp_kses_post( get_field( 'staff_biography' ) );
 								}
 								if ( get_field( 'list_of_courses' ) ) { ?>
-									<p>Courses: <?php echo esc_html( get_field( 'list_of_courses' ) ) ?></p>
+									<p><span class="bolder-text">Courses:</span> <?php echo esc_html( get_field( 'list_of_courses' ) ) ?></p>
 								<?php 
 								}
 								if ( get_field( 'instructors_website' ) ) { ?>
-									<a href="<?php echo esc_url( get_field( 'instructors_website' ) ); ?>">Instructor Website</a>
+									<p><a href="<?php echo esc_url( get_field( 'instructors_website' ) ); ?>">Instructor Website</a></p>
 								<?php
 								}
 							}?>
 							</article>
 						<?php 
 						} ?>
-						</section>
-						<?php
-						wp_reset_postdata();
+						</div>
+					</section>
+					<?php
+					wp_reset_postdata();
 					}
 				}
 			};
