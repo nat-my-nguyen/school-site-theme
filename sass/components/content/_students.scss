@@ -1,0 +1,60 @@
+/*Archive School Student*/
+.design-section, .dev-section{
+    padding: 1rem;
+    text-align: center;
+}
+
+.design-section a, .dev-section a{
+    text-decoration: none;
+}
+
+.design-section article h2, .dev-section article h2{
+    font-size: 1.3rem;
+    padding: 0;
+    margin:0;
+}
+
+.design-section article p, 
+.dev-section article p{
+    margin: 1rem;
+    text-align: left;
+}
+
+.taxonomy-terms p{
+    margin: 1rem 0;
+    font-weight: 600;
+    text-align: left;
+}
+
+.taxonomy-terms a{
+    font-weight: 800;
+    text-decoration: none;
+    color:#1d4425;
+}
+
+.taxonomy-terms a:hover{
+    color: $color__link-hover;
+}
+
+@media screen and (min-width: $mq_breakpoint_medium) {
+    .design-section, .dev-section{
+        display:flex;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 65rem) {
+    .design-section, .dev-section{
+        display: block;
+    }
+}
+
+/*tax-school-student-category*/
+.tax-school-student-category article a{
+    text-decoration: none;
+}
+
+
+/*single-school-student*/
+.single-school-student article a{
+    text-decoration: none;
+}
