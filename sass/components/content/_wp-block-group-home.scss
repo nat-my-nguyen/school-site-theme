@@ -1,0 +1,6 @@
+.is-layout-flex {
+    flex-direction: column;
+    @media screen and (min-width: $mq_breakpoint_medium) {
+        flex-direction: row;
+    }
+}

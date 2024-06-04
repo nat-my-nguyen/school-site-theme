@@ -78,7 +78,7 @@
 	display: none;
 }
 
-.site-branding{
+.site-branding:not(.site-footer .site-branding) {
 	margin: auto;
 	text-align: center;
 	width: fit-content;
