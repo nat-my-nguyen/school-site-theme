@@ -46,14 +46,14 @@ get_header();
 				//while loop will run through all Students posts
 				$query = new WP_Query($args);
 				if($query->have_posts()){
-					echo '<section class="design-section"><h2>'.esc_html__('Designers') . '</h2>';
+					echo '<section class="design-section"><h2>'.esc_html__('Designers:') . '</h2>';
 					while($query -> have_posts()){
 						$query -> the_post();
 						?>
 						<article>
 							<a href="<?php the_permalink(); ?>">
-								<h2><?php the_title();?></h2>
 								<?php the_post_thumbnail('custom-size'); ?>
+								<h2><?php the_title();?></h2>
 							</a>
 							<?php the_excerpt(); ?>
 							<?php
@@ -84,14 +84,14 @@ get_header();
 				//while loop will run through all Student posts
 				$query = new WP_Query($args);
 				if($query->have_posts()){
-					echo '<section class="dev-section"><h2>Developers</h2>';
+					echo '<section class="dev-section"><h2>Developers:</h2>';
 					while($query -> have_posts()){
 						$query -> the_post();
 						?>
 						<article>
 							<a href="<?php the_permalink(); ?>">
-								<h2><?php the_title();?></h2>
 								<?php the_post_thumbnail('custom-size'); ?>
+								<h2><?php the_title();?></h2>
 							</a>
 							<?php the_excerpt(); ?>
 							<?php
