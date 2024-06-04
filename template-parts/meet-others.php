@@ -6,7 +6,7 @@ $current_post = get_post();
 $terms = wp_get_post_terms( $current_post->ID, 'school-student-category' );
 
 if ( $terms && ! is_wp_error($terms) ) : ?>
-    <section>  
+    <section class="meet-others">  
         <?php foreach ( $terms as $term ) : ?>
             <h2><?php esc_html_e( 'Meet Other ', 'school-site' ); ?><span><?php echo esc_html( $term->name ); ?></span></h2>
                 <?php
