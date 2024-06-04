@@ -14,11 +14,11 @@
 @mixin responsive-heading($small, $medium, $large) {
 	font-size: $small;
 
-	@media (min-width: $mq_breakpoint_medium) {
+	@media screen and (min-width: $mq_breakpoint_medium) {
 		font-size: $medium;
 	}
 
-	@media (min-width: $mq_breakpoint_large) {
+	@media screen and (min-width: $mq_breakpoint_large) {
 		font-size: $large;
 	}
 }
@@ -43,15 +43,16 @@
 
 // Responsive footer display
 @mixin responsive-footer() {
-    @media (min-width: $mq_breakpoint_large) {
+    @media screen and (min-width: $mq_breakpoint_large) {
 		flex-direction: row;
         justify-content: space-around;
         align-items: center;
 	}
 }
 
+// Add full width
 @mixin add-full-width() {
-	@media (min-width: $mq_breakpoint_large) {
+	@media screen and (min-width: $mq_breakpoint_large) {
 		width: 100%;
 	}
 }

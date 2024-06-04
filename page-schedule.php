@@ -25,7 +25,7 @@ get_header();
 
 			if ( function_exists( 'get_field' ) && get_field( 'schedule_table' ) ) { ?>
 				<table class="course-table">
-					<caption>Weekly Course Schedule</caption>
+					<caption><span class="bolder-text">Weekly Course Schedule</span></caption>
 					<thead>
 						<tr>
 							<?php

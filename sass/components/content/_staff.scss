@@ -1,0 +1,25 @@
+.staff-container {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+
+    h2,
+    h3 {
+        width: 100%;
+    }
+
+    .staff-item {
+        a {
+            margin: 1.5rem;
+        }
+    }
+
+    @media screen and (min-width: $mq_breakpoint_medium) {
+        .staff-item-container {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}

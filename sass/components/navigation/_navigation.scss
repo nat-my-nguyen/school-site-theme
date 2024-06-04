@@ -39,15 +39,7 @@
 
 			a {
 				width: 200px;
-				color: #b9da93;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
+				@include link-colors-dark()
 			}
 		}
 
