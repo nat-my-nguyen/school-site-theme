@@ -47,6 +47,11 @@
 		flex-direction: row;
         justify-content: space-around;
         align-items: center;
+
+		h3,
+		p {
+			padding-top: 0;
+		}
 	}
 }
 

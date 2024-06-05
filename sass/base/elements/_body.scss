@@ -26,7 +26,9 @@ body {
 	box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.3);
 }
 
-article, section, table{
+article:not(.recent-news article),
+section:not(section.recent-news), 
+table{
 	margin: 0 auto;
 	width: 90%;
 
