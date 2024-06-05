@@ -1,4 +1,4 @@
-p:not(p a) {
+p:not(p a, p.site-title) {
 	margin: 0 1.5em 1.5em;
 }
 
