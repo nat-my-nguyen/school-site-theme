@@ -4,6 +4,10 @@ body {
 	height: 100%;
 }
 
+.home {
+	overflow-x: hidden;
+}
+
 /* For footer to sit at the bottom of the page
 * and fill pages where the content is too short to fill the screen height
 * keep flex-grow in site-main
