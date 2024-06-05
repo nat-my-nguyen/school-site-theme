@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main dev-design">
 		<?php
 		//get_queried_object() to get the current category object. 
 		$current_category = get_queried_object();
@@ -41,9 +41,10 @@ get_header();
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
-
+			<div class='taxonomy-container'>
 			<?php
 			/* Start the Loop */
+			
 			while ($the_query->have_posts()) :
 				$the_query->the_post();
 				?>
@@ -55,8 +56,11 @@ get_header();
 					<?php the_content(); ?>
 				</article>
 			<?php
+			
 			endwhile;
-
+			?>
+			</div>
+			<?php
 			wp_reset_postdata();
 
 			the_posts_navigation();
