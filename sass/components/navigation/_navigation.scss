@@ -13,27 +13,29 @@
 		margin: 0;
 		padding-left: 0;
 
+		li#menu-item-135 {
+			position: relative;
+		}
+
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
+			// float: left;
+			display: flex;
+			flex-direction: column;
 			position: absolute;
 			top: 100%;
+			width: max-content;
 			left: -999em;
 			z-index: 99999;
 			background-color: #000;
 			color: #fff;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
 
 			li {
 
 				&:hover > ul,
 				&.focus > ul {
 					display: block;
-					left: auto;
+					
 				}
 			}
 
