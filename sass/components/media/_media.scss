@@ -11,3 +11,14 @@
 .custom-logo-link {
 	display: inline-block;
 }
+
+@media screen and (min-width: 30em) {
+	.post-img-text img{
+		width: 35rem;
+	}
+}
+@media screen and (max-width: 30em) {
+	.post-img-text img{
+		width: 20rem;
+	}
+}
