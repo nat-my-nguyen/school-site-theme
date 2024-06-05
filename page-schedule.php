@@ -23,6 +23,7 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'page' );
 
+			//Display ACF: Schedule Content as a repeater table
 			if ( function_exists( 'get_field' ) && get_field( 'schedule_table' ) ) { ?>
 				<table class="course-table">
 					<caption><span class="bolder-text">Weekly Course Schedule</span></caption>

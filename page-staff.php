@@ -47,16 +47,19 @@ get_header();
 					if ( $query -> have_posts() ){ ?>
 
 					<section class="staff-container">
+						<!--Output category term as title-->
 						<h2><?php echo esc_html( $term->name ); ?></h2>
 						<div class="staff-item-container">
 						<?php 
 						while ( $query -> have_posts() ) {
 							$query -> the_post(); ?>
 
+							<!--Output Staff CPTs-->
 							<article class="staff-item">
 								<h3><?php echo esc_html( get_the_title() ); ?></h3>
 
 							<?php
+							//Display ACF: Staff CPTs' Content
 							if ( function_exists( 'get_field' ) ) {
 								if ( get_field( 'staff_biography' ) ) {
 									echo wp_kses_post( get_field( 'staff_biography' ) );
