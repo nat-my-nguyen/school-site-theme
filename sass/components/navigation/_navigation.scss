@@ -5,7 +5,7 @@
 
 .main-navigation {
 	display: block;
-	width: 80%;
+	// width: 80%; //Nat change
 
 	ul {
 		display: none;
@@ -85,14 +85,15 @@
 }
 
 .main-navigation ul {
+	margin: auto;
 	display: flex;
-	margin-left: 7%;
+	justify-content: space-evenly;
 	width: fit-content;
 }
 
 .nav-menu{
 	color: #1e532a;
-	font-size: 1rem;
+	font-size: .75rem;
 }
 .nav-menu li{
 	padding: 0.6rem;
@@ -117,19 +118,29 @@
 	}
 	.nav-menu{
 		color: #1e532a;
-		font-size: 1.3rem;
+		font-size: 1rem;
 	}
 	.nav-menu li{
 		padding: 1rem;
 		text-align: center;
 	}
 	.nav-menu svg{
-		//width: 3rem;
+		width: 1.75rem;
 	}
 	.main-navigation ul {
-		margin: auto;
-		display: flex;
+		// margin: auto;
+		width: 100%;
+		// display: flex;
 		justify-content: flex-end;
+	}
+}
+
+@media screen and (min-width: $mq_breakpoint_large) {
+	.nav-menu {
+		font-size: 1.3rem;
+	}
+	.nav-menu svg {
+		width: 2rem;
 	}
 }
 
