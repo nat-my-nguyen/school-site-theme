@@ -53,6 +53,21 @@
     text-decoration: none;
 }
 
+.dev-design article{
+    text-align: center;
+}
+
+.dev-design article p{
+    text-align: left;
+}
+
+@media screen and (min-width: $mq_breakpoint_medium) {
+    .taxonomy-container{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+}
+
 
 /*single-school-student*/
 .single-school-student article a{
